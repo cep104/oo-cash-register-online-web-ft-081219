@@ -12,11 +12,14 @@ class CashRegister
      quantity.times do 
      @cart << title
    end
+   
    self.last_transaction = price * quantity
-   @total += self.last_transaction
+   @total += self.last_transaction 
+   #+= adds and equals shortcut to @total = total + self.last_transaction
   end 
   
   def apply_discount 
+    binding.pry
     if @discount == 0 
       "There is no discount to apply."
     else
